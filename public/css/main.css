@@ -1,0 +1,95 @@
+/* ================= */
+/*       FONTS       */
+/* ================= */
+@import url('https://fonts.googleapis.com/css?family=Aleo&display=swap');
+/* ANTONIO BOLD */
+@font-face {
+    font-family: 'antoniobold';
+    src: url('/css/webfontkit/antonio-bold-webfont.woff2') format('woff2'),
+         url('/css/webfontkit/antonio-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/* ABEEZEE */
+@font-face {
+    font-family: 'abeezeeregular';
+    src: url('/css/webfontkit/abeezee-regular-webfont.woff2') format('woff2'),
+         url('/css/webfontkit/abeezee-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/* NORWESTER */
+@font-face {
+    font-family: 'norwesterregular';
+    src: url('/css/webfontkit/norwester-webfont.woff2') format('woff2'),
+         url('/css/webfontkit/norwester-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/* ================= */
+/*      VARIABLES    */
+/* ================= */
+:root {
+    /* fonts */
+    --title-font: 'norwesterregular';
+    --main-font: 'antoniobold';
+    --info-font: 'abeezeeregular';
+    --detail-font: 'Aleo';
+    /* colors */
+    --white: #fff;
+    --grey: #737373;
+    --green: #81a969;
+    --translucent-white: rgba(255, 255, 255, 0.93);
+    --translucent-green: rgba(129, 169, 105, 0.77);
+}
+/* * {
+    border: 1px red solid;
+} */
+/* ================= */
+/*       BODY        */
+/* ================= */
+body {
+    background-image: url('https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/watercolor-green-leaves-pattern-sketche-pedia.jpg');
+    background-repeat: repeat-y;
+    background-size: cover;
+    margin: 0;
+}
+/* ================= */
+/*        NAV        */
+/* ================= */
+nav {
+    background-color: var(--white);
+    width: 100%;
+    height: 70px;
+    margin: 20px 0px;
+    border-top: 7px solid var(--grey);
+    border-bottom: 7px solid var(--grey);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+nav > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+nav > div > h1 {
+    margin: 0;
+    padding-left: 20px;
+    font-family: var(--title-font);
+    font-size: 42px;
+}
+nav > div > img {
+    height: 46px;
+    padding-bottom: 10px;
+}
+nav > div > h3 {
+    font-family: var(--main-font);
+    font-size: 24px;
+    padding: 0px 30px;
+    letter-spacing: 3px;
+}
+/* ================= */
+/*       MAIN        */
+/* ================= */
