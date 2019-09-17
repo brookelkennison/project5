@@ -125,6 +125,50 @@ nav > div > h3 {
     width: 67%;
 }
 /* ================= */
+/*      MODAL        */
+/* ================= */
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+	background-color: white;
+	margin: 20% auto;
+	padding: 20px;
+	border: 1px solid grey;
+	width: 75%;
+	max-height: 400px;
+	max-width: 400px;
+}
+.modal-body{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+.modal-body > form {
+	display: flex;
+	flex-direction: column;
+	width: 35%;
+}
+.modal-body > h3 {
+	font-family: 'Luckiest Guy', cursive;
+	letter-spacing: 1px;
+	color: #40454d;
+}
+.modal-footer {
+	display:flex;
+	flex-direction: row-reverse;
+	padding: 1em 1em 0 1em;
+}
+/* ================= */
 /*      FOOTER       */
 /* ================= */
 .footer {
