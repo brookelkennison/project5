@@ -53,11 +53,11 @@ db.on('connected', () => console.log('mongo connected:'));
 // =========================
 //               CONTROLLERS
 // =========================
-// const businessController = require("./controllers/business.js");
-// app.use("/business", businessController);
-//
-// const sessionController = require("./controllers/sessions.js");
-// app.use("/sessions", sessionController);
+const nurseryController = require("./controllers/nursery.js");
+app.use("/plants", nurseryController);
+
+const sessionController = require("./controllers/sessions.js");
+app.use("/sessions", sessionController);
 
 // =========================
 //                  LISTENER

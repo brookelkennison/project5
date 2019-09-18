@@ -15,11 +15,14 @@ router.delete('/', (req, res)=>{
 });
 
 router.post('/', (req, res)=>{
+    console.log(req.body);
     //find user based on the username that they typed in /sessions/new
     User.findOne({username:req.body.username}, (err, foundUser)=>{
+        console.log(foundUser);
         //compare what the user typed for password to the encrypted db value
         if(bcrypt.compareSync(req.body.password, foundUser.password)){
             req.session.currentUser = foundUser;
+            console.log(foundUser);
             res.status(201).json({
               status:201,
               message:'session created',
@@ -39,6 +42,7 @@ router.post('/', (req, res)=>{
 });
 
 router.post('/newuser', (req, res)=>{
+    //encrypt what the user typed for password
     req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
     User.create(req.body, (err, createdUser)=>{
 		req.session.currentUser = createdUser;

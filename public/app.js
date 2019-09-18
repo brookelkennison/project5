@@ -7,7 +7,6 @@ app.controller('AppController', ['$http', function($http){
 	 * AUTHORIZATION/NAV FUNCTIONS  *
 	 *                              *
 	 ********************************/
-
 	this.createUser = function(){
         $http({
             method:'POST',
@@ -43,11 +42,13 @@ app.controller('AppController', ['$http', function($http){
                 controller.username = null;
                 controller.password = null;
                 controller.goApp();
+                controller.getPlants();
             },
             function(error){
                 console.log(error);
             }
         );
+
     };
 
     this.logOut = function(){
@@ -74,6 +75,7 @@ app.controller('AppController', ['$http', function($http){
 				console.log("Username:", response.data.username);
 				controller.loggedInUsername = response.data.username;
 				console.log("loggedInUsername:", controller.loggedInUsername);
+
             },
             function(error){
                 console.log(error);
@@ -81,6 +83,55 @@ app.controller('AppController', ['$http', function($http){
         );
     };
 
-    this.goApp();
+    /********************************
+	 *     ADD PLANT FUNCTIONS      *
+	 *                              *
+	 ********************************/
+    this.addPlant = function() {
+        $http({
+            method:'POST',
+            url: '/plants',
+            data: {
+                nickname: this.nickname,
+                species: this.species,
+                water: this.water,
+                sunlight: this.sunlight,
+                image: this.image
+            }
+        }).then((res) => {
+            this.nickname = null;
+            this.species = null;
+            this.water = null;
+            this.sunlight = null;
+            this.image = null;
+            this.getPlants();
+        });
+    };
 
+    // this.showPlant = (plant) => {
+    //     $http({
+    //         method: 'GET',
+    //         url: '/plants/' + plant._id
+    //     }). then((res) => {
+    //         console.log(res.data);
+    //         this.plantToShow = res.data;
+    //         console.log(this.plantToShow);
+    //     });
+    // };
+
+    this.getPlants = () => {
+        $http({
+            method: 'GET',
+            url: '/plants'
+        }).then((res) => {
+            this.plants = res.data;
+            this.allPlants = () => {
+                const plants = [];
+                for (let i = 0; i < this.plants.length; i++) {
+                    plants.push(this.plants[i].nickname);
+                }
+                console.log(plants);
+            };
+        });
+    };
 }]);

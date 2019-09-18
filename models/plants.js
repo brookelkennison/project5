@@ -2,10 +2,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const plantsSchema = Schema({
-    nickName: {type:String, required:true},
-	scientificName: String,
+    nickname: {type:String, required:true},
+	species: String,
 	water: String,
-    sun: String,
+    sunlight: String,
+    image: String
 });
 
 const Plants = mongoose.model('Plants', plantsSchema);
