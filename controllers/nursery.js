@@ -20,14 +20,6 @@ router.get("/", (req, res) => {
   });
 });
 
-
-// =================  SHOW
-router.get("/:id", (req, res) => {
-  Plants.findById(req.params.id, (error, showplant) => {
-    res.json(showplant);
-});
-});
-
 // =================  UPDATE
 router.put("/:id", (req, res) => {
 	console.log("Edit Route 2 (id in route of plant to edit):", req.params.id);
@@ -38,7 +30,7 @@ router.put("/:id", (req, res) => {
 
 // =================  DELETE
 router.delete("/:id", (req, res) => {
-	Plants.findByIdAndRemove(req.params.id, (deletedPlant) => {
+	Plants.findByIdAndRemove(req.params.id, (err, deletedPlant) => {
 		res.json(deletedPlant);
   });
 });

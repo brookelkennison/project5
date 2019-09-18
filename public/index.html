@@ -8,6 +8,8 @@
         <meta charset="utf-8">
         <!-- CSS -->
         <link rel="stylesheet" href="./css/main.css">
+        <!-- SPECTRE -->
+        <!-- <link rel="stylesheet" href="spectre.min.css"> -->
         <title>PlantHub</title>
     </head>
     <body ng-controller = "AppController as ctrl">
@@ -123,6 +125,7 @@
                                             <input type="text" ng-model="ctrl.editedSunlight" placeholder="Sunlight Directions">
                                             <input type="text" ng-model="ctrl.editedImage" placeholder="Plant Image Link">
             				                <input type="submit" class="submit" value="EDIT" ng-click="editPlant={}">
+                                            <input type="button" class="button" value="DELETE" ng-click="editPlant={}; deletePlant={'display':'block'}">
             				            </form>
             						</div>
                                     <div class="modal-footer">
@@ -131,6 +134,22 @@
                                 </div>
             				</div>
                             <!-- edit modal end -->
+                            <!-- DELETE MODAL START -->
+                            <div id="deletePlantModal" class="modal" ng-style="deletePlant">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <form ng-submit="ctrl.deletePlant()">
+                                        <h3>ARE YOU SURE YOU WANT TO DELETE THIS PLANT?</h3>
+                                            <input type="submit" class="button" value="YES" ng-click="deletePlant={}">
+                                            <input type="button" class="button" value="NO" ng-click="deletePlant={}; ctrl.deletePlant(plants)">
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button ng-click="deletePlant={}" class="close">X</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- DELETE MODAL END -->
                         </div>
                     </div>
                 </div>
