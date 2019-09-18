@@ -134,4 +134,26 @@ app.controller('AppController', ['$http', function($http){
             };
         });
     };
+
+    this.editPlant = (plantsToShow) => {
+        console.log(plantsToShow);
+        $http({
+            method: 'PUT',
+            url: '/plants/' + plants._id,
+            data: {
+                nickname: this.nickname,
+                species: this.species,
+                water: this.water,
+                sunlight: this.sunlight,
+                image: this.image
+            }
+        }). then((res) => {
+            this.editedNickname = this.data.nickname;
+            this.editedSpecies = this.data.species;
+            this.editedWater = this.data.water;
+            this.editedSunlight = this.data.sunlight;
+            this.editedImage = this.data.image;
+            this.getPlants();
+        });
+    };
 }]);

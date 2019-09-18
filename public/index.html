@@ -85,14 +85,14 @@
     				                <input type="text" ng-model="ctrl.species" placeholder="Scientific Name">
                                     <input type="text" ng-model="ctrl.water" placeholder="Watering Directions">
                                     <input type="text" ng-model="ctrl.sunlight" placeholder="Sunlight Directions">
-                                    <!-- <input type="text" ng-model="ctrl.image" placeholder="Plant Image"> -->
-                                    <label ng-model="ctrl.image" class="image-upload-container btn btn-bwm">
+                                    <input type="text" ng-model="ctrl.image" placeholder="Plant Image Link">
+                                    <!-- <label ng-model="ctrl.image" class="image-upload-container btn btn-bwm">
                                       <span>Select Image</span>
                                       <input #imageInput
                                              type="file"
                                              accept="image/*"
                                              (change)="processFile(imageInput)">
-                                    </label>
+                                    </label> -->
     				                <input type="submit" class="submit" value="ADD A PLANT" ng-click="addPlant={}">
     				            </form>
     						</div>
@@ -104,12 +104,34 @@
                     <!-- END ADD PLANT MODAL -->
                     <div class="showPlant">
                         <!-- <img src={{ctrl.plants[5].image}} alt=""> -->
-                        {{ctrl.plants}}
                         <div ng-repeat="x in ctrl.plants">
                             <h4>{{x.nickname}}</h4>
-
+                            <img src={{x.image}} alt="">
+                            <h5>{{x.species}}</h5>
+                            <p>{{x.water}}</p>
+                            <p>{{x.sunlight}}</p>
+                            <h1 ng-click="editPlant={'display':'block'}">Edit</h1>
+                            <!-- edit modal start -->
+                            <div id="editPlantModal" class="modal" ng-style="editPlant">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <h3>EDIT</h3>
+            							<form ng-submit="ctrl.editPlant()">
+            				                <input type="text" ng-model="ctrl.editedNickname" placeholder="Nickname">
+            				                <input type="text" ng-model="ctrl.editedSpecies" placeholder="Scientific Name">
+                                            <input type="text" ng-model="ctrl.editedWater" placeholder="Watering Directions">
+                                            <input type="text" ng-model="ctrl.editedSunlight" placeholder="Sunlight Directions">
+                                            <input type="text" ng-model="ctrl.editedImage" placeholder="Plant Image Link">
+            				                <input type="submit" class="submit" value="EDIT" ng-click="editPlant={}">
+            				            </form>
+            						</div>
+                                    <div class="modal-footer">
+                                    	<button ng-click="editPlant={}" class="close">X</button>
+                                    </div>
+                                </div>
+            				</div>
+                            <!-- edit modal end -->
                         </div>
-
                     </div>
                 </div>
             </div>
