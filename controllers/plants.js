@@ -23,7 +23,9 @@ router.get("/", (req, res) => {
 // =================  UPDATE
 router.put("/:id", (req, res) => {
 	console.log("Edit Route 2 (id in route of plant to edit):", req.params.id);
+	console.log(req.body);
 	Plants.findByIdAndUpdate(req.params.id, req.body, (error, updatedPlant) => {
+		console.log(updatedPlant, error);
 		res.json(updatedPlant)
   });
 });

@@ -53,8 +53,8 @@ db.on('connected', () => console.log('mongo connected:'));
 // =========================
 //               CONTROLLERS
 // =========================
-const nurseryController = require("./controllers/nursery.js");
-app.use("/plants", nurseryController);
+const plantController = require("./controllers/plants.js");
+app.use("/plants", plantController);
 
 const sessionController = require("./controllers/sessions.js");
 app.use("/sessions", sessionController);

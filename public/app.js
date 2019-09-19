@@ -80,34 +80,38 @@ app.controller('AppController', ['$http', function($http){
         );
     };
     /********************************
-	 *     ADD PLANT FUNCTIONS      *
+	 *     PLANT FUNCTIONS      *
 	 *                              *
 	 ********************************/
 
-    this.editPlant = function(plants){
-        console.log(plants);
-        $http({
-            method: 'PUT',
-            url: '/plants/' + plants._id,
-            data: {
-                nickname: this.nickname,
-                species: this.species,
-                water: this.water,
-                sunlight: this.sunlight,
-                image: this.image
-            }
-        }). then(function(){
-            console.log(res.data);
-            this.editedNickname = res.data.nickname;
-            this.editedSpecies = res.data.species;
-            this.editedWater = res.data.water;
-            this.editedSunlight = res.data.sunlight;
-            this.editedImage = res.data.image;
-            controller.getPlants();
-        });
-    };
+     this.editPlant = (plant) => {
+ 		console.log("Edit Route 1 (id of plant):", plant._id);
+        console.log(this.editedNickname);
+ 		$http({
+ 			method:'PUT',
+ 			url:'/plants/'+ plant._id,
+ 			data:{
+                test: "hello",
+                nickname: this.editedNickname,
+ 			    species: this.editSpecies,
+                water: this.editedWater,
+                sunlight: this.editedSunlight,
+                image: this.editedImage
+ 			}
+ 		}).then((res) => {
+ 			console.log("Edit Route 3 (res.data of edited plant):", res.data);
+ 			this.editedNickname = res.data.nickname;
+ 			this.editedSpecies = res.data.species;
+ 			this.editedWater = res.data.water;
+ 			this.editedSunlight = res.data.sunlight;
+ 			this.editedImage = res.data.image;
+ 			this.getPlants()
+ 		})
+ 	}
 
     this.deletePlant = function(plant) {
+        console.log(plant);
+        console.log("delete plant is running");
         $http({
             method: "DELETE",
             url: '/plants/' + plant._id
