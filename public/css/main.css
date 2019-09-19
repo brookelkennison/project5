@@ -48,7 +48,7 @@
 /* ================= */
 /*       BODY        */
 /* ================= */
-body {
+html {
     background-image: url('https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/watercolor-green-leaves-pattern-sketche-pedia.jpg');
     background-repeat: repeat-y;
     background-size: cover;
@@ -60,7 +60,7 @@ body {
 nav {
     background-color: var(--white);
     width: 100%;
-    height: 70px;
+    /* height: 70px; */
     margin: 20px 0px;
     border-top: 7px solid var(--grey);
     border-bottom: 7px solid var(--grey);
@@ -70,6 +70,11 @@ nav {
     justify-content: space-between;
 }
 nav > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+nav > div > div {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -97,7 +102,7 @@ nav > div > h3 {
     display: flex;
     flex-direction: row;
     width: 95%;
-    height: 600px;
+    /* height: 600px; */
     margin: 0 auto;
     border: 7px solid var(--grey);
     background-color: var(--translucent-white);
@@ -124,10 +129,13 @@ nav > div > h3 {
 .show {
     width: 67%;
 }
+.card-image > img {
+    max-width: 50%
+}
 /* ================= */
 /*      MODAL        */
 /* ================= */
-.modal {
+.editPlantModal {
 	display: none;
 	position: fixed;
 	z-index: 1;
@@ -138,8 +146,30 @@ nav > div > h3 {
 	overflow: auto;
 	background-color: rgba(0,0,0,0.4);
 }
-.modal-content {
-	background-color: white;
+.deletePlantModal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+/* .modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+} */
+.modal-edit-content {
+	background-color: rgba(255,255,255,0.8);
 	margin: 20% auto;
 	padding: 20px;
 	border: 1px solid grey;
@@ -147,7 +177,8 @@ nav > div > h3 {
 	max-height: 400px;
 	max-width: 400px;
 }
-.modal-body{
+/*
+.modal-edit-body{
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
@@ -167,7 +198,7 @@ nav > div > h3 {
 	display:flex;
 	flex-direction: row-reverse;
 	padding: 1em 1em 0 1em;
-}
+} */
 /* ================= */
 /*      FOOTER       */
 /* ================= */

@@ -1,3 +1,39 @@
+// START OF JQUERY
+$(() => {
+    // ADD A PLANT START
+    $(".close-add-plant-modal").on("click", function() {
+      $('.add-plant-modal').removeClass('active');
+    });
+    $(".show-add-plant-modal").on("click", function() {
+      $('.add-plant-modal').addClass('active');
+    });
+    // ADD A PLANT END
+    // LOGIN MODAL START
+    $(".close-login-modal").on("click", function() {
+      $('.login-modal').removeClass('active');
+    });
+    $(".show-login-modal").on("click", function() {
+      $('.login-modal').addClass('active');
+    });
+    // LOGIN MODAL END
+    // CREATE ACCOUNT START
+    $(".close-create-modal").on("click", function() {
+      $('.create-modal').removeClass('active');
+    });
+    $(".show-create-modal").on("click", function() {
+      $('.create-modal').addClass('active');
+    });
+    // CREATE ACCOUNT END
+    // LOGOUT START
+    $(".logout-btn").on("click", function() {
+      $('.modal').removeClass('active');
+    });
+    // LOGOUT END
+
+});
+// END OF JQUERY
+
+
 const app = angular.module('MyApp', []);
 
 app.controller('AppController', ['$http', function($http){
