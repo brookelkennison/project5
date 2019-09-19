@@ -7,6 +7,7 @@ const session = require('express-session');
 require('dotenv').config();
 const https = require('https');
 const app = express();
+const PORT = process.env.PORT;
 // const PORT = process.env.PORT;
 console.log(process.env.MONGODB_URI);
 const db = mongoose.connection;
@@ -62,9 +63,7 @@ app.use("/sessions", sessionController);
 // =========================
 //                  LISTENER
 // =========================
-app.listen(3000, ()=>{
-    console.log('listening...');
-});
+app.listen(PORT, () => console.log( 'Listening on port:', PORT));
 mongoose.connect('mongodb://localhost:27017/auth', {useNewUrlParser:true});
 mongoose.connection.once('open', ()=>{
     console.log('connected to mongo');
