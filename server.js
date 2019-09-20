@@ -64,7 +64,7 @@ app.use("/sessions", sessionController);
 //                  LISTENER
 // =========================
 app.listen(PORT, () => console.log( 'Listening on port:', PORT));
-mongoose.connect('mongodb://localhost:27017/auth', {useNewUrlParser:true});
-mongoose.connection.once('open', ()=>{
-    console.log('connected to mongo');
-});
+// mongoose.connect('mongodb://localhost:27017/auth', {useNewUrlParser:true});
+// mongoose.connection.once('open', ()=>{
+//     console.log('connected to mongo');
+// });

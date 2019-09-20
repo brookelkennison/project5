@@ -42,6 +42,7 @@ router.post('/', (req, res)=>{
 });
 
 router.post('/newuser', (req, res)=>{
+    console.log(req.body);
     //encrypt what the user typed for password
     req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
     User.create(req.body, (err, createdUser)=>{
