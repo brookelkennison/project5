@@ -42,9 +42,9 @@
     --translucent-white: rgba(255, 255, 255, 0.93);
     --translucent-green: rgba(129, 169, 105, 0.77);
 }
-/* * {
+* {
     border: 1px red solid;
-} */
+}
 /* ================= */
 /*       BODY        */
 /* ================= */
@@ -100,16 +100,16 @@ nav > div > h3 {
 /* ================= */
 .main {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 95%;
     /* height: 600px; */
     margin: 0 auto;
     border: 7px solid var(--grey);
     background-color: var(--translucent-white);
+    overflow: scroll;
 }
 .aside {
-    width: 33%;
-    max-width: 400px;
+    width: 100%;
     background-color: var(--translucent-green);
     display: flex;
     flex-direction: column;
@@ -118,16 +118,15 @@ nav > div > h3 {
 }
 .aside > h3 {
     font-family: var(--title-font);
-    background-color: var(--white);
+
+    /* background-color: var(--white); */
     width: 70%;
-    font-size: 30px;
+    font-size: 70px;
     padding: 10px;
-}
-#yourNursery {
-    margin-top: 100px;
+    margin-top: 30px;
 }
 .show {
-    width: 67%;
+    height: 600px;
 }
 .card-image > img {
     max-width: 50%
