@@ -95,6 +95,7 @@ nav > div > h3 {
     font-size: 24px;
     padding: 0px 30px;
     letter-spacing: 3px;
+    text-transform: uppercase;
 }
 /* #modal-id {
     height: 36px;
