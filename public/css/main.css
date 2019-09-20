@@ -42,14 +42,15 @@
     --translucent-white: rgba(255, 255, 255, 0.93);
     --translucent-green: rgba(129, 169, 105, 0.77);
 }
-* {
+/* * {
     border: 1px red solid;
-}
+} */
 /* ================= */
 /*       BODY        */
 /* ================= */
 html {
     background-image: url('https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/watercolor-green-leaves-pattern-sketche-pedia.jpg');
+    background-color: black;
     background-repeat: repeat-y;
     background-size: cover;
     margin: 0;
@@ -95,6 +96,9 @@ nav > div > h3 {
     padding: 0px 30px;
     letter-spacing: 3px;
 }
+/* #modal-id {
+    height: 36px;
+} */
 /* ================= */
 /*       MAIN        */
 /* ================= */
@@ -107,6 +111,8 @@ nav > div > h3 {
     border: 7px solid var(--grey);
     background-color: var(--translucent-white);
     overflow: scroll;
+    justify-content: center;
+    align-items: center;
 }
 .aside {
     width: 100%;
